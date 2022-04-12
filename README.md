@@ -1,4 +1,4 @@
-# Linux_Raspberrypi3b_image
+# Minimal Raspberrypi3b image
 
 This the minimal boot file system built from scratch 
 
