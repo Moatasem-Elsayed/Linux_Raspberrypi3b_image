@@ -1,0 +1,302 @@
+# 1 "arch/arm/boot/dts/overlays/jedec-spi-nor-overlay.dts"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "arch/arm/boot/dts/overlays/jedec-spi-nor-overlay.dts"
+# 12 "arch/arm/boot/dts/overlays/jedec-spi-nor-overlay.dts"
+/dts-v1/;
+/plugin/;
+
+/ {
+ compatible = "brcm,bcm2835";
+
+
+ fragment@0 {
+  target = <&spidev0>;
+  __dormant__ {
+   status = "disabled";
+  };
+ };
+
+
+ fragment@1 {
+  target = <&spidev1>;
+  __dormant__ {
+   status = "disabled";
+  };
+ };
+
+
+ fragment@2 {
+  target-path = "spi1/spidev@0";
+  __dormant__ {
+   status = "disabled";
+  };
+ };
+
+
+ fragment@3 {
+  target-path = "spi1/spidev@1";
+  __dormant__ {
+   status = "disabled";
+  };
+ };
+
+
+ fragment@4 {
+  target-path = "spi1/spidev@2";
+  __dormant__ {
+   status = "disabled";
+  };
+ };
+
+
+ fragment@5 {
+  target-path = "spi2/spidev@0";
+  __dormant__ {
+   status = "disabled";
+  };
+ };
+
+
+ fragment@6 {
+  target-path = "spi2/spidev@1";
+  __dormant__ {
+   status = "disabled";
+  };
+ };
+
+
+ fragment@7 {
+  target-path = "spi2/spidev@2";
+  __dormant__ {
+   status = "disabled";
+  };
+ };
+
+
+ fragment@8 {
+  target = <&spi0>;
+  __dormant__ {
+   status = "okay";
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+   spi_nor_00: spi_nor@0 {
+    #address-cells = <1>;
+    #size-cells = <1>;
+    compatible = "jedec,spi-nor";
+    reg = <0>;
+    spi-max-frequency = <500000>;
+   };
+  };
+ };
+
+
+ fragment@9 {
+  target = <&spi0>;
+  __dormant__ {
+   status = "okay";
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+   spi_nor_01: spi_nor@1 {
+    #address-cells = <1>;
+    #size-cells = <1>;
+    compatible = "jedec,spi-nor";
+    reg = <1>;
+    spi-max-frequency = <500000>;
+   };
+  };
+ };
+
+
+ fragment@10 {
+  target = <&spi1>;
+  __dormant__ {
+   status = "okay";
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+   spi_nor_10: spi_nor@0 {
+    #address-cells = <1>;
+    #size-cells = <1>;
+    compatible = "jedec,spi-nor";
+    reg = <0>;
+    spi-max-frequency = <500000>;
+   };
+  };
+ };
+
+
+ fragment@11 {
+  target = <&spi1>;
+  __dormant__ {
+   status = "okay";
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+   spi_nor_11: spi_nor@1 {
+    #address-cells = <1>;
+    #size-cells = <1>;
+    compatible = "jedec,spi-nor";
+    reg = <1>;
+    spi-max-frequency = <500000>;
+   };
+  };
+ };
+
+
+ fragment@12 {
+  target = <&spi1>;
+  __dormant__ {
+   status = "okay";
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+   spi_nor_12: spi_nor@2 {
+    #address-cells = <1>;
+    #size-cells = <1>;
+    compatible = "jedec,spi-nor";
+    reg = <2>;
+    spi-max-frequency = <500000>;
+   };
+  };
+ };
+
+
+ fragment@13 {
+  target = <&spi2>;
+  __dormant__ {
+   status = "okay";
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+   spi_nor_20: spi_nor@0 {
+    #address-cells = <1>;
+    #size-cells = <1>;
+    compatible = "jedec,spi-nor";
+    reg = <0>;
+    spi-max-frequency = <500000>;
+   };
+  };
+ };
+
+
+ fragment@14 {
+  target = <&spi2>;
+  __dormant__ {
+   status = "okay";
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+   spi_nor_21: spi_nor@1 {
+    #address-cells = <1>;
+    #size-cells = <1>;
+    compatible = "jedec,spi-nor";
+    reg = <1>;
+    spi-max-frequency = <500000>;
+   };
+  };
+ };
+
+
+ fragment@15 {
+  target = <&spi2>;
+  __dormant__ {
+   status = "okay";
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+   spi_nor_22: spi_nor@2 {
+    #address-cells = <1>;
+    #size-cells = <1>;
+    compatible = "jedec,spi-nor";
+    reg = <2>;
+    spi-max-frequency = <500000>;
+   };
+  };
+ };
+
+
+
+ fragment@16 {
+  target = <&spi_nor_00>;
+  __dormant__ {
+   m25p,fast-read;
+  };
+ };
+
+
+
+ fragment@17 {
+  target = <&spi_nor_01>;
+  __dormant__ {
+   m25p,fast-read;
+  };
+ };
+
+
+
+ fragment@18 {
+  target = <&spi_nor_10>;
+  __dormant__ {
+   m25p,fast-read;
+  };
+ };
+
+
+
+ fragment@19 {
+  target = <&spi_nor_11>;
+  __dormant__ {
+   m25p,fast-read;
+  };
+ };
+
+
+
+ fragment@20 {
+  target = <&spi_nor_12>;
+  __dormant__ {
+   m25p,fast-read;
+  };
+ };
+
+
+
+ fragment@21 {
+  target = <&spi_nor_20>;
+  __dormant__ {
+   m25p,fast-read;
+  };
+ };
+
+
+
+ fragment@22 {
+  target = <&spi_nor_21>;
+  __dormant__ {
+   m25p,fast-read;
+  };
+ };
+
+
+
+ fragment@23 {
+  target = <&spi_nor_22>;
+  __dormant__ {
+   m25p,fast-read;
+  };
+ };
+
+ __overrides__ {
+  flash-spi0-0 = <0>,"+0+8";
+  flash-spi0-1 = <0>,"+1+9";
+  flash-spi1-0 = <0>,"+2+10";
+  flash-spi1-1 = <0>,"+3+11";
+  flash-spi1-2 = <0>,"+4+12";
+  flash-spi2-0 = <0>,"+5+13";
+  flash-spi2-1 = <0>,"+6+14";
+  flash-spi2-2 = <0>,"+7+15";
+  flash-fastr-spi0-0 = <0>,"+0+8+16";
+  flash-fastr-spi0-1 = <0>,"+1+9+17";
+  flash-fastr-spi1-0 = <0>,"+2+10+18";
+  flash-fastr-spi1-1 = <0>,"+3+11+19";
+  flash-fastr-spi1-2 = <0>,"+4+12+20";
+  flash-fastr-spi2-0 = <0>,"+5+13+21";
+  flash-fastr-spi2-1 = <0>,"+6+14+22";
+  flash-fastr-spi2-2 = <0>,"+7+15+23";
+ };
+};

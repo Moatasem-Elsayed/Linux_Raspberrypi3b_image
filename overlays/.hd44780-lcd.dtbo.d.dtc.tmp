@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/hd44780-lcd.dtbo: arch/arm/boot/dts/overlays/.hd44780-lcd.dtbo.dts.tmp

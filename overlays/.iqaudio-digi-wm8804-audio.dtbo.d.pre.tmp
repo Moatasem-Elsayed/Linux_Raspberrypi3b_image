@@ -1,0 +1,2 @@
+iqaudio-digi-wm8804-audio-overlay.o: \
+ arch/arm/boot/dts/overlays/iqaudio-digi-wm8804-audio-overlay.dts

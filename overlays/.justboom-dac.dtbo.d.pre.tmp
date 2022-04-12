@@ -1,0 +1,2 @@
+justboom-dac-overlay.o: \
+ arch/arm/boot/dts/overlays/justboom-dac-overlay.dts

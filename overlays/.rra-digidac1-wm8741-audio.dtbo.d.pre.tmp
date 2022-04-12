@@ -1,0 +1,2 @@
+rra-digidac1-wm8741-audio-overlay.o: \
+ arch/arm/boot/dts/overlays/rra-digidac1-wm8741-audio-overlay.dts

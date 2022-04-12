@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/audioinjector-addons.dtbo: arch/arm/boot/dts/overlays/.audioinjector-addons.dtbo.dts.tmp

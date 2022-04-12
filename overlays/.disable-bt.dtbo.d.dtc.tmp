@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/disable-bt.dtbo: arch/arm/boot/dts/overlays/.disable-bt.dtbo.dts.tmp

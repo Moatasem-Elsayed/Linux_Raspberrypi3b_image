@@ -1,0 +1,1 @@
+vga666-overlay.o: arch/arm/boot/dts/overlays/vga666-overlay.dts

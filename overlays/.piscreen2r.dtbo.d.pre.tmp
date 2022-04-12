@@ -1,0 +1,1 @@
+piscreen2r-overlay.o: arch/arm/boot/dts/overlays/piscreen2r-overlay.dts

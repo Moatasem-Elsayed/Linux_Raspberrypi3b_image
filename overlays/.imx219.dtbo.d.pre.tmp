@@ -1,0 +1,2 @@
+imx219-overlay.o: arch/arm/boot/dts/overlays/imx219-overlay.dts \
+ scripts/dtc/include-prefixes/dt-bindings/gpio/gpio.h

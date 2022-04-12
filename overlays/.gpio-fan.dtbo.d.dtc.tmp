@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/gpio-fan.dtbo: arch/arm/boot/dts/overlays/.gpio-fan.dtbo.dts.tmp

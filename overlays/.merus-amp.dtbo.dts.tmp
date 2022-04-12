@@ -1,0 +1,66 @@
+# 1 "arch/arm/boot/dts/overlays/merus-amp-overlay.dts"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "arch/arm/boot/dts/overlays/merus-amp-overlay.dts"
+
+
+/dts-v1/;
+/plugin/;
+# 1 "./scripts/dtc/include-prefixes/dt-bindings/pinctrl/bcm2835.h" 1
+# 6 "arch/arm/boot/dts/overlays/merus-amp-overlay.dts" 2
+# 1 "./scripts/dtc/include-prefixes/dt-bindings/gpio/gpio.h" 1
+# 7 "arch/arm/boot/dts/overlays/merus-amp-overlay.dts" 2
+
+
+/ {
+ compatible = "brcm,bcm2835";
+
+ fragment@0 {
+  target = <&i2s>;
+  __overlay__ {
+   status = "okay";
+  };
+ };
+
+ fragment@1 {
+  target = <&gpio>;
+  __overlay__ {
+   merus_amp_pins: merus_amp_pins {
+    brcm,pins = <23>;
+    brcm,function = <0>;
+    brcm,pull = <2>;
+   };
+  };
+ };
+
+ fragment@2 {
+  target = <&i2c1>;
+  __overlay__ {
+   #address-cells = <1>;
+   #size-cells = <0>;
+   status = "okay";
+
+   merus_amp: ma120x0p@20 {
+    #sound-dai-cells = <0>;
+    compatible = "ma,ma120x0p";
+    reg = <0x20>;
+    status = "okay";
+    pinctrl-names = "default";
+    pinctrl-0 = <&merus_amp_pins>;
+    enable_gp-gpios = <&gpio 14 0>;
+    mute_gp-gpios = <&gpio 15 0>;
+    booster_gp-gpios = <&gpio 17 0>;
+    error_gp-gpios = <&gpio 23 0>;
+   };
+  };
+ };
+
+ fragment@3 {
+  target = <&sound>;
+  __overlay__ {
+   compatible = "merus,merus-amp";
+   i2s-controller = <&i2s>;
+   status = "okay";
+  };
+ };
+};

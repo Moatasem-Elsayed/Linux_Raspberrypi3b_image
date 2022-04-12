@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/gpio-key.dtbo: arch/arm/boot/dts/overlays/.gpio-key.dtbo.dts.tmp

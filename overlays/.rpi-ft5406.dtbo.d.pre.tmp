@@ -1,0 +1,1 @@
+rpi-ft5406-overlay.o: arch/arm/boot/dts/overlays/rpi-ft5406-overlay.dts

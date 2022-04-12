@@ -1,0 +1,1 @@
+anyspi-overlay.o: arch/arm/boot/dts/overlays/anyspi-overlay.dts

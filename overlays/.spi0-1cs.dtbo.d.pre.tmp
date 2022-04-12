@@ -1,0 +1,1 @@
+spi0-1cs-overlay.o: arch/arm/boot/dts/overlays/spi0-1cs-overlay.dts

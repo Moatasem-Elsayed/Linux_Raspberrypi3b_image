@@ -1,0 +1,2 @@
+media-center-overlay.o: \
+ arch/arm/boot/dts/overlays/media-center-overlay.dts

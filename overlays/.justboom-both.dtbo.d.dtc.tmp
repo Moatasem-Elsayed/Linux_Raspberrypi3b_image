@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/justboom-both.dtbo: arch/arm/boot/dts/overlays/.justboom-both.dtbo.dts.tmp

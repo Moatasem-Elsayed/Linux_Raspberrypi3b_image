@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/vc4-kms-v3d.dtbo: arch/arm/boot/dts/overlays/.vc4-kms-v3d.dtbo.dts.tmp

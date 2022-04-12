@@ -1,0 +1,1 @@
+i-sabre-q2m-overlay.o: arch/arm/boot/dts/overlays/i-sabre-q2m-overlay.dts

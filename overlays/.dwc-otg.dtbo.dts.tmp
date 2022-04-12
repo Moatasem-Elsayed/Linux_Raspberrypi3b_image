@@ -1,0 +1,18 @@
+# 1 "arch/arm/boot/dts/overlays/dwc-otg-overlay.dts"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "arch/arm/boot/dts/overlays/dwc-otg-overlay.dts"
+/dts-v1/;
+/plugin/;
+
+/{
+ compatible = "brcm,bcm2835";
+
+ fragment@0 {
+  target = <&usb>;
+  __overlay__ {
+   compatible = "brcm,bcm2708-usb";
+   status = "okay";
+  };
+ };
+};

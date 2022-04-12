@@ -1,0 +1,1 @@
+pwm-2chan-overlay.o: arch/arm/boot/dts/overlays/pwm-2chan-overlay.dts

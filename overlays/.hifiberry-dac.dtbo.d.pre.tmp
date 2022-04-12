@@ -1,0 +1,2 @@
+hifiberry-dac-overlay.o: \
+ arch/arm/boot/dts/overlays/hifiberry-dac-overlay.dts

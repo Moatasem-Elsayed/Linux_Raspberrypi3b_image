@@ -1,0 +1,1 @@
+enc28j60-overlay.o: arch/arm/boot/dts/overlays/enc28j60-overlay.dts

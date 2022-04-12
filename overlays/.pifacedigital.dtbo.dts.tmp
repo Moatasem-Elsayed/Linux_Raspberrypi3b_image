@@ -1,0 +1,85 @@
+# 1 "arch/arm/boot/dts/overlays/pifacedigital-overlay.dts"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "arch/arm/boot/dts/overlays/pifacedigital-overlay.dts"
+# 65 "arch/arm/boot/dts/overlays/pifacedigital-overlay.dts"
+/dts-v1/;
+/plugin/;
+
+/ {
+ compatible = "brcm,bcm2835";
+
+
+ fragment@0 {
+  target = <&spidev0>;
+  __overlay__ {
+   status = "disabled";
+  };
+ };
+
+
+ fragment@1 {
+  target = <&spi0>;
+  __overlay__ {
+   status = "okay";
+   #address-cells = <1>;
+   #size-cells = <0>;
+
+   pfdigital: pifacedigital@0 {
+    compatible = "microchip,mcp23s17";
+    reg = <0>;
+
+
+    microchip,spi-present-mask = <0x01>;
+    spi-max-frequency = <500000>;
+
+    gpio-controller;
+    #gpio-cells = <2>;
+
+
+    interrupt-controller;
+    #interrupt-cells = <2>;
+
+
+
+
+    interrupts = <25 0x8>;
+    interrupt-parent = <&gpio>;
+
+
+    pinctrl-0 = <&pfdigital_irq &pfdigital_pullups>;
+    pinctrl-names = "default";
+    pfdigital_pullups: pinmux {
+     pins =
+      "gpio8",
+      "gpio9",
+      "gpio10",
+      "gpio11",
+      "gpio12",
+      "gpio13",
+      "gpio14",
+      "gpio15";
+     bias-pull-up;
+    };
+   };
+  };
+ };
+
+
+
+
+
+ fragment@3 {
+  target = <&gpio>;
+  __overlay__ {
+   pfdigital_irq: pifacedigital_irq {
+    brcm,pins = <25>;
+    brcm,function = <0>;
+   };
+  };
+ };
+
+ __overrides__ {
+  spi-present-mask = <&pfdigital>, "microchip,spi-present-mask:0";
+ };
+};

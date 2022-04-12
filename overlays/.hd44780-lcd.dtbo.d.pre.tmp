@@ -1,0 +1,1 @@
+hd44780-lcd-overlay.o: arch/arm/boot/dts/overlays/hd44780-lcd-overlay.dts

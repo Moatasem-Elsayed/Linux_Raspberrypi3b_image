@@ -1,0 +1,718 @@
+# 1 "arch/arm/boot/dts/overlays/mcp23s17-overlay.dts"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "arch/arm/boot/dts/overlays/mcp23s17-overlay.dts"
+# 19 "arch/arm/boot/dts/overlays/mcp23s17-overlay.dts"
+/dts-v1/;
+/plugin/;
+
+/ {
+ compatible = "brcm,bcm2835";
+
+
+ fragment@0 {
+  target = <&spidev0>;
+  __dormant__ {
+   status = "disabled";
+  };
+ };
+
+
+ fragment@1 {
+  target = <&spidev1>;
+  __dormant__ {
+   status = "disabled";
+  };
+ };
+
+
+ fragment@2 {
+  target-path = "spi1/spidev@0";
+  __dormant__ {
+   status = "disabled";
+  };
+ };
+
+
+ fragment@3 {
+  target-path = "spi1/spidev@1";
+  __dormant__ {
+   status = "disabled";
+  };
+ };
+
+
+ fragment@4 {
+  target-path = "spi1/spidev@2";
+  __dormant__ {
+   status = "disabled";
+  };
+ };
+
+
+ fragment@5 {
+  target-path = "spi2/spidev@0";
+  __dormant__ {
+   status = "disabled";
+  };
+ };
+
+
+ fragment@6 {
+  target-path = "spi2/spidev@1";
+  __dormant__ {
+   status = "disabled";
+  };
+ };
+
+
+ fragment@7 {
+  target-path = "spi2/spidev@2";
+  __dormant__ {
+   status = "disabled";
+  };
+ };
+
+
+ fragment@8 {
+  target = <&spi0>;
+  __dormant__ {
+   status = "okay";
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+   mcp23s08_00: mcp23s08@0 {
+    compatible = "microchip,mcp23s08";
+      gpio-controller;
+      #gpio-cells = <2>;
+        microchip,spi-present-mask = <0x00>;
+         reg = <0>;
+        spi-max-frequency = <500000>;
+    status = "okay";
+    #interrupt-cells=<2>;
+    interrupts = <0 2>;
+   };
+  };
+ };
+
+
+ fragment@9 {
+  target = <&spi0>;
+  __dormant__ {
+   status = "okay";
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+   mcp23s08_01: mcp23s08@1 {
+    compatible = "microchip,mcp23s08";
+      gpio-controller;
+      #gpio-cells = <2>;
+        microchip,spi-present-mask = <0x00>;
+         reg = <1>;
+        spi-max-frequency = <500000>;
+    status = "okay";
+    #interrupt-cells=<2>;
+    interrupts = <0 2>;
+   };
+  };
+ };
+
+
+ fragment@10 {
+  target = <&spi1>;
+  __dormant__ {
+   status = "okay";
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+   mcp23s08_10: mcp23s08@0 {
+    compatible = "microchip,mcp23s08";
+      gpio-controller;
+      #gpio-cells = <2>;
+        microchip,spi-present-mask = <0x00>;
+         reg = <0>;
+        spi-max-frequency = <500000>;
+    status = "okay";
+    #interrupt-cells=<2>;
+    interrupts = <0 2>;
+   };
+  };
+ };
+
+
+ fragment@11 {
+  target = <&spi1>;
+  __dormant__ {
+   status = "okay";
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+   mcp23s08_11: mcp23s08@1 {
+    compatible = "microchip,mcp23s08";
+      gpio-controller;
+      #gpio-cells = <2>;
+        microchip,spi-present-mask = <0x00>;
+         reg = <1>;
+        spi-max-frequency = <500000>;
+    status = "okay";
+    #interrupt-cells=<2>;
+    interrupts = <0 2>;
+   };
+  };
+ };
+
+
+ fragment@12 {
+  target = <&spi1>;
+  __dormant__ {
+   status = "okay";
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+   mcp23s08_12: mcp23s08@2 {
+    compatible = "microchip,mcp23s08";
+      gpio-controller;
+      #gpio-cells = <2>;
+        microchip,spi-present-mask = <0x00>;
+         reg = <2>;
+        spi-max-frequency = <500000>;
+    status = "okay";
+    #interrupt-cells=<2>;
+    interrupts = <0 2>;
+   };
+  };
+ };
+
+
+ fragment@13 {
+  target = <&spi2>;
+  __dormant__ {
+   status = "okay";
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+   mcp23s08_20: mcp23s08@0 {
+    compatible = "microchip,mcp23s08";
+      gpio-controller;
+      #gpio-cells = <2>;
+        microchip,spi-present-mask = <0x00>;
+         reg = <0>;
+        spi-max-frequency = <500000>;
+    status = "okay";
+    #interrupt-cells=<2>;
+    interrupts = <0 2>;
+   };
+  };
+ };
+
+
+ fragment@14 {
+  target = <&spi2>;
+  __dormant__ {
+   status = "okay";
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+   mcp23s08_21: mcp23s08@1 {
+    compatible = "microchip,mcp23s08";
+      gpio-controller;
+      #gpio-cells = <2>;
+        microchip,spi-present-mask = <0x00>;
+         reg = <1>;
+        spi-max-frequency = <500000>;
+    status = "okay";
+    #interrupt-cells=<2>;
+    interrupts = <0 2>;
+   };
+  };
+ };
+
+
+ fragment@15 {
+  target = <&spi2>;
+  __dormant__ {
+   status = "okay";
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+   mcp23s08_22: mcp23s08@2 {
+    compatible = "microchip,mcp23s08";
+      gpio-controller;
+      #gpio-cells = <2>;
+        microchip,spi-present-mask = <0x00>;
+         reg = <2>;
+        spi-max-frequency = <500000>;
+    status = "okay";
+    #interrupt-cells=<2>;
+    interrupts = <0 2>;
+   };
+  };
+ };
+
+
+ fragment@16 {
+  target = <&spi0>;
+  __dormant__ {
+   status = "okay";
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+   mcp23s17_00: mcp23s17@0 {
+    compatible = "microchip,mcp23s17";
+      gpio-controller;
+      #gpio-cells = <2>;
+        microchip,spi-present-mask = <0x00>;
+         reg = <0>;
+        spi-max-frequency = <500000>;
+    status = "okay";
+    #interrupt-cells=<2>;
+    interrupts = <0 2>;
+   };
+  };
+ };
+
+
+ fragment@17 {
+  target = <&spi0>;
+  __dormant__ {
+   status = "okay";
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+   mcp23s17_01: mcp23s17@1 {
+    compatible = "microchip,mcp23s17";
+      gpio-controller;
+      #gpio-cells = <2>;
+        microchip,spi-present-mask = <0x00>;
+         reg = <1>;
+        spi-max-frequency = <500000>;
+    status = "okay";
+    #interrupt-cells=<2>;
+    interrupts = <0 2>;
+   };
+  };
+ };
+
+
+ fragment@18 {
+  target = <&spi1>;
+  __dormant__ {
+   status = "okay";
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+   mcp23s17_10: mcp23s17@0 {
+    compatible = "microchip,mcp23s17";
+      gpio-controller;
+      #gpio-cells = <2>;
+        microchip,spi-present-mask = <0x00>;
+         reg = <0>;
+        spi-max-frequency = <500000>;
+    status = "okay";
+    #interrupt-cells=<2>;
+    interrupts = <0 2>;
+   };
+  };
+ };
+
+
+ fragment@19 {
+  target = <&spi1>;
+  __dormant__ {
+   status = "okay";
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+   mcp23s17_11: mcp23s17@1 {
+    compatible = "microchip,mcp23s17";
+      gpio-controller;
+      #gpio-cells = <2>;
+        microchip,spi-present-mask = <0x00>;
+         reg = <1>;
+        spi-max-frequency = <500000>;
+    status = "okay";
+    #interrupt-cells=<2>;
+    interrupts = <0 2>;
+   };
+  };
+ };
+
+
+ fragment@20 {
+  target = <&spi1>;
+  __dormant__ {
+   status = "okay";
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+   mcp23s17_12: mcp23s17@2 {
+    compatible = "microchip,mcp23s17";
+      gpio-controller;
+      #gpio-cells = <2>;
+        microchip,spi-present-mask = <0x00>;
+         reg = <2>;
+        spi-max-frequency = <500000>;
+    status = "okay";
+    #interrupt-cells=<2>;
+    interrupts = <0 2>;
+   };
+  };
+ };
+
+
+ fragment@21 {
+  target = <&spi2>;
+  __dormant__ {
+   status = "okay";
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+   mcp23s17_20: mcp23s17@0 {
+    compatible = "microchip,mcp23s17";
+      gpio-controller;
+      #gpio-cells = <2>;
+        microchip,spi-present-mask = <0x00>;
+         reg = <0>;
+        spi-max-frequency = <500000>;
+    status = "okay";
+    #interrupt-cells=<2>;
+    interrupts = <0 2>;
+   };
+  };
+ };
+
+
+ fragment@22 {
+  target = <&spi2>;
+  __dormant__ {
+   status = "okay";
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+   mcp23s17_21: mcp23s17@1 {
+    compatible = "microchip,mcp23s17";
+      gpio-controller;
+      #gpio-cells = <2>;
+        microchip,spi-present-mask = <0x00>;
+         reg = <1>;
+        spi-max-frequency = <500000>;
+    status = "okay";
+    #interrupt-cells=<2>;
+    interrupts = <0 2>;
+   };
+  };
+ };
+
+
+ fragment@23 {
+  target = <&spi2>;
+  __dormant__ {
+   status = "okay";
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+   mcp23s17_22: mcp23s17@2 {
+    compatible = "microchip,mcp23s17";
+      gpio-controller;
+      #gpio-cells = <2>;
+        microchip,spi-present-mask = <0x00>;
+         reg = <2>;
+        spi-max-frequency = <500000>;
+    status = "okay";
+    #interrupt-cells=<2>;
+    interrupts = <0 2>;
+   };
+  };
+ };
+
+
+ fragment@24 {
+  target = <&gpio>;
+  __dormant__ {
+   spi0_0_int_pins: spi0_0_int_pins {
+    brcm,pins = <0>;
+    brcm,function = <0>;
+    brcm,pull = <0>;
+   };
+  };
+ };
+
+
+ fragment@25 {
+  target = <&gpio>;
+  __dormant__ {
+   spi0_1_int_pins: spi0_1_int_pins {
+    brcm,pins = <0>;
+    brcm,function = <0>;
+    brcm,pull = <0>;
+   };
+  };
+ };
+
+
+ fragment@26 {
+  target = <&gpio>;
+  __dormant__ {
+   spi1_0_int_pins: spi1_0_int_pins {
+    brcm,pins = <0>;
+    brcm,function = <0>;
+    brcm,pull = <0>;
+   };
+  };
+ };
+
+
+ fragment@27 {
+  target = <&gpio>;
+  __dormant__ {
+   spi1_1_int_pins: spi1_1_int_pins {
+    brcm,pins = <0>;
+    brcm,function = <0>;
+    brcm,pull = <0>;
+   };
+  };
+ };
+
+
+ fragment@28 {
+  target = <&gpio>;
+  __dormant__ {
+   spi1_2_int_pins: spi1_2_int_pins {
+    brcm,pins = <0>;
+    brcm,function = <0>;
+    brcm,pull = <0>;
+   };
+  };
+ };
+
+
+ fragment@29 {
+  target = <&gpio>;
+  __dormant__ {
+   spi2_0_int_pins: spi2_0_int_pins {
+    brcm,pins = <0>;
+    brcm,function = <0>;
+    brcm,pull = <0>;
+   };
+  };
+ };
+
+
+ fragment@30 {
+  target = <&gpio>;
+  __dormant__ {
+   spi2_1_int_pins: spi2_1_int_pins {
+    brcm,pins = <0>;
+    brcm,function = <0>;
+    brcm,pull = <0>;
+   };
+  };
+ };
+
+
+ fragment@31 {
+  target = <&gpio>;
+  __dormant__ {
+   spi2_2_int_pins: spi2_2_int_pins {
+    brcm,pins = <0>;
+    brcm,function = <0>;
+    brcm,pull = <0>;
+   };
+  };
+ };
+
+
+
+ fragment@32 {
+  target = <&mcp23s08_00>;
+  __dormant__ {
+   interrupt-parent = <&gpio>;
+   interrupt-controller;
+  };
+ };
+
+
+
+ fragment@33 {
+  target = <&mcp23s08_01>;
+  __dormant__ {
+   interrupt-parent = <&gpio>;
+   interrupt-controller;
+  };
+ };
+
+
+
+ fragment@34 {
+  target = <&mcp23s08_10>;
+  __dormant__ {
+   interrupt-parent = <&gpio>;
+   interrupt-controller;
+  };
+ };
+
+
+
+ fragment@35 {
+  target = <&mcp23s08_11>;
+  __dormant__ {
+   interrupt-parent = <&gpio>;
+   interrupt-controller;
+  };
+ };
+
+
+
+ fragment@36 {
+  target = <&mcp23s08_12>;
+  __dormant__ {
+   interrupt-parent = <&gpio>;
+   interrupt-controller;
+  };
+ };
+
+
+
+ fragment@37 {
+  target = <&mcp23s08_20>;
+  __dormant__ {
+   interrupt-parent = <&gpio>;
+   interrupt-controller;
+  };
+ };
+
+
+
+ fragment@38 {
+  target = <&mcp23s08_21>;
+  __dormant__ {
+   interrupt-parent = <&gpio>;
+   interrupt-controller;
+  };
+ };
+
+
+
+ fragment@39 {
+  target = <&mcp23s08_22>;
+  __dormant__ {
+   interrupt-parent = <&gpio>;
+   interrupt-controller;
+  };
+ };
+
+
+
+
+ fragment@40 {
+  target = <&mcp23s17_00>;
+  __dormant__ {
+   interrupt-parent = <&gpio>;
+   interrupt-controller;
+   microchip,irq-mirror;
+  };
+ };
+
+
+
+
+ fragment@41 {
+  target = <&mcp23s17_01>;
+  __dormant__ {
+   interrupt-parent = <&gpio>;
+   interrupt-controller;
+   microchip,irq-mirror;
+  };
+ };
+
+
+
+
+ fragment@42 {
+  target = <&mcp23s17_10>;
+  __dormant__ {
+   interrupt-parent = <&gpio>;
+   interrupt-controller;
+   microchip,irq-mirror;
+  };
+ };
+
+
+
+
+ fragment@43 {
+  target = <&mcp23s17_11>;
+  __dormant__ {
+   interrupt-parent = <&gpio>;
+   interrupt-controller;
+   microchip,irq-mirror;
+  };
+ };
+
+
+
+
+ fragment@44 {
+  target = <&mcp23s17_12>;
+  __dormant__ {
+   interrupt-parent = <&gpio>;
+   interrupt-controller;
+   microchip,irq-mirror;
+  };
+ };
+
+
+
+
+ fragment@45 {
+  target = <&mcp23s17_20>;
+  __dormant__ {
+   interrupt-parent = <&gpio>;
+   interrupt-controller;
+   microchip,irq-mirror;
+  };
+ };
+
+
+
+
+ fragment@46 {
+  target = <&mcp23s17_21>;
+  __dormant__ {
+   interrupt-parent = <&gpio>;
+   interrupt-controller;
+   microchip,irq-mirror;
+  };
+ };
+
+
+
+
+ fragment@47 {
+  target = <&mcp23s17_22>;
+  __dormant__ {
+   interrupt-parent = <&gpio>;
+   interrupt-controller;
+   microchip,irq-mirror;
+  };
+ };
+
+ __overrides__ {
+  s08-spi0-0-present = <0>,"+0+8", <&mcp23s08_00>,"microchip,spi-present-mask:0";
+  s08-spi0-1-present = <0>,"+1+9", <&mcp23s08_01>,"microchip,spi-present-mask:0";
+  s08-spi1-0-present = <0>,"+2+10", <&mcp23s08_10>,"microchip,spi-present-mask:0";
+  s08-spi1-1-present = <0>,"+3+11", <&mcp23s08_11>,"microchip,spi-present-mask:0";
+  s08-spi1-2-present = <0>,"+4+12", <&mcp23s08_12>,"microchip,spi-present-mask:0";
+  s08-spi2-0-present = <0>,"+5+13", <&mcp23s08_20>,"microchip,spi-present-mask:0";
+  s08-spi2-1-present = <0>,"+6+14", <&mcp23s08_21>,"microchip,spi-present-mask:0";
+  s08-spi2-2-present = <0>,"+7+15", <&mcp23s08_22>,"microchip,spi-present-mask:0";
+  s17-spi0-0-present = <0>,"+0+16", <&mcp23s17_00>,"microchip,spi-present-mask:0";
+  s17-spi0-1-present = <0>,"+1+17", <&mcp23s17_01>,"microchip,spi-present-mask:0";
+  s17-spi1-0-present = <0>,"+2+18", <&mcp23s17_10>,"microchip,spi-present-mask:0";
+  s17-spi1-1-present = <0>,"+3+19", <&mcp23s17_11>,"microchip,spi-present-mask:0";
+  s17-spi1-2-present = <0>,"+4+20", <&mcp23s17_12>,"microchip,spi-present-mask:0";
+  s17-spi2-0-present = <0>,"+5+21", <&mcp23s17_20>,"microchip,spi-present-mask:0";
+  s17-spi2-1-present = <0>,"+6+22", <&mcp23s17_21>,"microchip,spi-present-mask:0";
+  s17-spi2-2-present = <0>,"+7+23", <&mcp23s17_22>,"microchip,spi-present-mask:0";
+  s08-spi0-0-int-gpio = <0>,"+24+32", <&spi0_0_int_pins>,"brcm,pins:0", <&mcp23s08_00>,"interrupts:0";
+  s08-spi0-1-int-gpio = <0>,"+25+33", <&spi0_1_int_pins>,"brcm,pins:0", <&mcp23s08_01>,"interrupts:0";
+  s08-spi1-0-int-gpio = <0>,"+26+34", <&spi1_0_int_pins>,"brcm,pins:0", <&mcp23s08_10>,"interrupts:0";
+  s08-spi1-1-int-gpio = <0>,"+27+35", <&spi1_1_int_pins>,"brcm,pins:0", <&mcp23s08_11>,"interrupts:0";
+  s08-spi1-2-int-gpio = <0>,"+28+36", <&spi1_2_int_pins>,"brcm,pins:0", <&mcp23s08_12>,"interrupts:0";
+  s08-spi2-0-int-gpio = <0>,"+29+37", <&spi2_0_int_pins>,"brcm,pins:0", <&mcp23s08_20>,"interrupts:0";
+  s08-spi2-1-int-gpio = <0>,"+30+38", <&spi2_1_int_pins>,"brcm,pins:0", <&mcp23s08_21>,"interrupts:0";
+  s08-spi2-2-int-gpio = <0>,"+31+39", <&spi2_2_int_pins>,"brcm,pins:0", <&mcp23s08_22>,"interrupts:0";
+  s17-spi0-0-int-gpio = <0>,"+24+40", <&spi0_0_int_pins>,"brcm,pins:0", <&mcp23s17_00>,"interrupts:0";
+  s17-spi0-1-int-gpio = <0>,"+25+41", <&spi0_1_int_pins>,"brcm,pins:0", <&mcp23s17_01>,"interrupts:0";
+  s17-spi1-0-int-gpio = <0>,"+26+42", <&spi1_0_int_pins>,"brcm,pins:0", <&mcp23s17_10>,"interrupts:0";
+  s17-spi1-1-int-gpio = <0>,"+27+43", <&spi1_1_int_pins>,"brcm,pins:0", <&mcp23s17_11>,"interrupts:0";
+  s17-spi1-2-int-gpio = <0>,"+28+44", <&spi1_2_int_pins>,"brcm,pins:0", <&mcp23s17_12>,"interrupts:0";
+  s17-spi2-0-int-gpio = <0>,"+29+45", <&spi2_0_int_pins>,"brcm,pins:0", <&mcp23s17_20>,"interrupts:0";
+  s17-spi2-1-int-gpio = <0>,"+30+46", <&spi2_1_int_pins>,"brcm,pins:0", <&mcp23s17_21>,"interrupts:0";
+  s17-spi2-2-int-gpio = <0>,"+31+47", <&spi2_2_int_pins>,"brcm,pins:0", <&mcp23s17_22>,"interrupts:0";
+ };
+};

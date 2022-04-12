@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/tinylcd35.dtbo: arch/arm/boot/dts/overlays/.tinylcd35.dtbo.dts.tmp

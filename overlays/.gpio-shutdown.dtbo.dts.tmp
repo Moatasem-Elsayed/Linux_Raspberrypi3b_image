@@ -1,0 +1,79 @@
+# 1 "arch/arm/boot/dts/overlays/gpio-shutdown-overlay.dts"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "arch/arm/boot/dts/overlays/gpio-shutdown-overlay.dts"
+
+/dts-v1/;
+/plugin/;
+# 14 "arch/arm/boot/dts/overlays/gpio-shutdown-overlay.dts"
+/ {
+ compatible = "brcm,bcm2835";
+
+ fragment@0 {
+
+  target = <&gpio>;
+  __overlay__ {
+
+
+
+
+
+
+   pin_state: shutdown_button_pins {
+    brcm,pins = <3>;
+    brcm,function = <0>;
+    brcm,pull = <2>;
+   };
+  };
+ };
+ fragment@1 {
+
+  target-path = "/soc";
+  __overlay__ {
+   shutdown_button {
+
+
+    compatible = "gpio-keys";
+
+
+
+    pinctrl-names = "default";
+    pinctrl-0 = <&pin_state>;
+
+
+    status = "okay";
+
+
+
+
+    button: shutdown {
+     label = "shutdown";
+     linux,code = <116>;
+     gpios = <&gpio 3 1>;
+     debounce-interval = <100>;
+    };
+   };
+  };
+ };
+
+
+
+
+
+
+ __overrides__ {
+
+  gpio_pin = <&button>,"gpios:4",
+             <&pin_state>,"brcm,pins:0";
+
+
+
+
+  gpio_pull = <&pin_state>,"brcm,pull:0";
+
+
+  active_low = <&button>,"gpios:8";
+  debounce = <&button>,"debounce-interval:0";
+ };
+
+};

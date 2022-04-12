@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/hifiberry-digi.dtbo: arch/arm/boot/dts/overlays/.hifiberry-digi.dtbo.dts.tmp

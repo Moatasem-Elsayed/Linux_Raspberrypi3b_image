@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/pca953x.dtbo: arch/arm/boot/dts/overlays/.pca953x.dtbo.dts.tmp

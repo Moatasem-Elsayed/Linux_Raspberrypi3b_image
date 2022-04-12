@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/ads7846.dtbo: arch/arm/boot/dts/overlays/.ads7846.dtbo.dts.tmp

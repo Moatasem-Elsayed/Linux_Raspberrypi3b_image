@@ -1,0 +1,2 @@
+gpio-poweroff-overlay.o: \
+ arch/arm/boot/dts/overlays/gpio-poweroff-overlay.dts

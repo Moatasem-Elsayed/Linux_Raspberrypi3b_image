@@ -1,0 +1,1 @@
+dwc-otg-overlay.o: arch/arm/boot/dts/overlays/dwc-otg-overlay.dts

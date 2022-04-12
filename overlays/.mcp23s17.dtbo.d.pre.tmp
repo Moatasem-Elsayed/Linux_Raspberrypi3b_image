@@ -1,0 +1,1 @@
+mcp23s17-overlay.o: arch/arm/boot/dts/overlays/mcp23s17-overlay.dts

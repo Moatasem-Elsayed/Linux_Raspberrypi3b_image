@@ -1,0 +1,1 @@
+act-led-overlay.o: arch/arm/boot/dts/overlays/act-led-overlay.dts

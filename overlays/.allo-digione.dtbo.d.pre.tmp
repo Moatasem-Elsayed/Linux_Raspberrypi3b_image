@@ -1,0 +1,2 @@
+allo-digione-overlay.o: \
+ arch/arm/boot/dts/overlays/allo-digione-overlay.dts

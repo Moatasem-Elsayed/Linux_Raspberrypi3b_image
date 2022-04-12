@@ -1,0 +1,2 @@
+ghost-amp-overlay.o: arch/arm/boot/dts/overlays/ghost-amp-overlay.dts \
+ scripts/dtc/include-prefixes/dt-bindings/gpio/gpio-fsm.h

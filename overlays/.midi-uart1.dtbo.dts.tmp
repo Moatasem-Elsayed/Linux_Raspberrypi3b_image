@@ -1,0 +1,40 @@
+# 1 "arch/arm/boot/dts/overlays/midi-uart1-overlay.dts"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "arch/arm/boot/dts/overlays/midi-uart1-overlay.dts"
+/dts-v1/;
+/plugin/;
+
+# 1 "./scripts/dtc/include-prefixes/dt-bindings/clock/bcm2835-aux.h" 1
+# 5 "arch/arm/boot/dts/overlays/midi-uart1-overlay.dts" 2
+# 14 "arch/arm/boot/dts/overlays/midi-uart1-overlay.dts"
+/{
+ compatible = "brcm,bcm2835";
+
+ fragment@0 {
+  target-path = "/clocks";
+  __overlay__ {
+   midi_clk: clock@5 {
+    compatible = "fixed-factor-clock";
+    #clock-cells = <0>;
+    clocks = <&aux 0>;
+    clock-mult = <38400>;
+    clock-div = <31250>;
+   };
+  };
+ };
+
+ fragment@1 {
+  target = <&uart1>;
+  __overlay__ {
+   clocks = <&midi_clk>;
+  };
+ };
+
+ fragment@2 {
+  target = <&aux>;
+  __overlay__ {
+   clock-output-names = "aux_uart", "aux_spi1", "aux_spi2";
+  };
+ };
+};

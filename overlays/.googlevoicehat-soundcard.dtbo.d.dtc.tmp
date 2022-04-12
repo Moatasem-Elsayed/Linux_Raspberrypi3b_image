@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/googlevoicehat-soundcard.dtbo: arch/arm/boot/dts/overlays/.googlevoicehat-soundcard.dtbo.dts.tmp

@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/balena-fin.dtbo: arch/arm/boot/dts/overlays/.balena-fin.dtbo.dts.tmp

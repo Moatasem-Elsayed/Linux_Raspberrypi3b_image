@@ -1,0 +1,2 @@
+iqaudio-dacplus-overlay.o: \
+ arch/arm/boot/dts/overlays/iqaudio-dacplus-overlay.dts

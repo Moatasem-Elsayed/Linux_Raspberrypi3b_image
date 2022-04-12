@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/apds9960.dtbo: arch/arm/boot/dts/overlays/.apds9960.dtbo.dts.tmp

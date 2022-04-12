@@ -1,0 +1,84 @@
+# 1 "arch/arm/boot/dts/overlays/miniuart-bt-overlay.dts"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "arch/arm/boot/dts/overlays/miniuart-bt-overlay.dts"
+/dts-v1/;
+/plugin/;
+# 18 "arch/arm/boot/dts/overlays/miniuart-bt-overlay.dts"
+# 1 "./scripts/dtc/include-prefixes/dt-bindings/gpio/gpio.h" 1
+# 19 "arch/arm/boot/dts/overlays/miniuart-bt-overlay.dts" 2
+
+/{
+ compatible = "brcm,bcm2835";
+
+ fragment@0 {
+  target = <&uart0>;
+  __overlay__ {
+   pinctrl-names = "default";
+   pinctrl-0 = <&uart0_pins>;
+   status = "okay";
+  };
+ };
+
+ fragment@1 {
+  target = <&bt>;
+  __overlay__ {
+   status = "disabled";
+  };
+ };
+
+ fragment@2 {
+  target = <&uart1>;
+  __overlay__ {
+   pinctrl-names = "default";
+   pinctrl-0 = <&uart1_pins &bt_pins &fake_bt_cts>;
+   status = "okay";
+  };
+ };
+
+ fragment@3 {
+  target = <&uart0_pins>;
+  __overlay__ {
+   brcm,pins;
+   brcm,function;
+   brcm,pull;
+  };
+ };
+
+ fragment@4 {
+  target = <&uart1_pins>;
+  __overlay__ {
+   brcm,pins = <32 33>;
+   brcm,function = <2>;
+   brcm,pull = <0 2>;
+  };
+ };
+
+ fragment@5 {
+  target = <&gpio>;
+  __overlay__ {
+   fake_bt_cts: fake_bt_cts {
+    brcm,pins = <31>;
+    brcm,function = <1>;
+   };
+  };
+ };
+
+ fragment@6 {
+  target-path = "/aliases";
+  __overlay__ {
+   serial0 = "/soc/serial@7e201000";
+   serial1 = "/soc/serial@7e215040";
+  };
+ };
+
+ fragment@7 {
+  target = <&minibt>;
+  minibt_frag: __overlay__ {
+  };
+ };
+
+ __overrides__ {
+  krnbt = <&minibt_frag>,"status";
+ };
+};

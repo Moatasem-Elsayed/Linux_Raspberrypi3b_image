@@ -1,0 +1,1 @@
+w1-gpio-overlay.o: arch/arm/boot/dts/overlays/w1-gpio-overlay.dts

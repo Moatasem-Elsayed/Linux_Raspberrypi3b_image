@@ -1,0 +1,107 @@
+# 1 "arch/arm/boot/dts/overlays/pisound-overlay.dts"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "arch/arm/boot/dts/overlays/pisound-overlay.dts"
+# 20 "arch/arm/boot/dts/overlays/pisound-overlay.dts"
+/dts-v1/;
+/plugin/;
+
+# 1 "./scripts/dtc/include-prefixes/dt-bindings/gpio/gpio.h" 1
+# 24 "arch/arm/boot/dts/overlays/pisound-overlay.dts" 2
+
+/ {
+ compatible = "brcm,bcm2835";
+
+ fragment@0 {
+  target = <&spi0>;
+  __overlay__ {
+   status = "okay";
+  };
+ };
+
+ fragment@1 {
+  target = <&spidev0>;
+  __overlay__ {
+   status = "disabled";
+  };
+ };
+
+ fragment@2 {
+  target = <&spidev1>;
+  __overlay__ {
+   status = "okay";
+  };
+ };
+
+ fragment@3 {
+  target = <&spi0>;
+  __overlay__ {
+   #address-cells = <1>;
+   #size-cells = <0>;
+
+   pisound_spi: pisound_spi@0{
+    compatible = "blokaslabs,pisound-spi";
+    reg = <0>;
+    pinctrl-names = "default";
+    pinctrl-0 = <&spi0_pins>;
+    spi-max-frequency = <1000000>;
+   };
+  };
+ };
+
+ fragment@4 {
+  target-path = "/";
+  __overlay__ {
+   pcm5102a-codec {
+    #sound-dai-cells = <0>;
+    compatible = "ti,pcm5102a";
+    status = "okay";
+   };
+  };
+ };
+
+ fragment@5 {
+  target = <&sound>;
+  __overlay__ {
+   compatible = "blokaslabs,pisound";
+   i2s-controller = <&i2s>;
+   status = "okay";
+
+   pinctrl-0 = <&pisound_button_pins>;
+
+   osr-gpios =
+    <&gpio 13 0>,
+    <&gpio 26 0>,
+    <&gpio 16 0>;
+
+   reset-gpios =
+    <&gpio 12 0>,
+    <&gpio 24 0>;
+
+   data_available-gpios = <&gpio 25 0>;
+
+   button-gpios = <&gpio 17 1>;
+  };
+ };
+
+ fragment@6 {
+  target = <&gpio>;
+  __overlay__ {
+   pinctrl-names = "default";
+   pinctrl-0 = <&pisound_button_pins>;
+
+   pisound_button_pins: pisound_button_pins {
+    brcm,pins = <17>;
+    brcm,function = <0>;
+    brcm,pull = <2>;
+   };
+  };
+ };
+
+ fragment@7 {
+  target = <&i2s>;
+  __overlay__ {
+   status = "okay";
+  };
+ };
+};

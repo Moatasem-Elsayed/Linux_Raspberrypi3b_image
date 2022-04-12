@@ -1,0 +1,38 @@
+# 1 "arch/arm/boot/dts/overlays/rpi-tv-overlay.dts"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "arch/arm/boot/dts/overlays/rpi-tv-overlay.dts"
+
+
+/dts-v1/;
+/plugin/;
+
+/ {
+ compatible = "brcm,bcm2835";
+
+ fragment@0 {
+  target = <&spidev0>;
+  __overlay__ {
+   status = "disabled";
+  };
+ };
+
+ fragment@1 {
+  target = <&spi0>;
+  __overlay__ {
+
+   #address-cells = <1>;
+   #size-cells = <0>;
+
+   status = "okay";
+
+   cxd2880@0 {
+    compatible = "sony,cxd2880";
+    reg = <0>;
+    spi-max-frequency = <50000000>;
+    status = "okay";
+   };
+  };
+ };
+
+};

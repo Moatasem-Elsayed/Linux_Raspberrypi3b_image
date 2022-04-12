@@ -1,0 +1,1 @@
+mcp342x-overlay.o: arch/arm/boot/dts/overlays/mcp342x-overlay.dts

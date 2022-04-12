@@ -1,0 +1,48 @@
+# 1 "arch/arm/boot/dts/overlays/vc4-kms-kippah-7inch-overlay.dts"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "arch/arm/boot/dts/overlays/vc4-kms-kippah-7inch-overlay.dts"
+
+
+
+
+/dts-v1/;
+/plugin/;
+
+# 1 "./scripts/dtc/include-prefixes/dt-bindings/pinctrl/bcm2835.h" 1
+# 9 "arch/arm/boot/dts/overlays/vc4-kms-kippah-7inch-overlay.dts" 2
+
+/ {
+ compatible = "brcm,bcm2835";
+
+ fragment@0 {
+  target-path = "/";
+  __overlay__ {
+   panel: panel {
+    compatible = "ontat,yx700wv03", "simple-panel";
+
+    port {
+     panel_in: endpoint {
+      remote-endpoint = <&dpi_out>;
+     };
+    };
+   };
+  };
+ };
+
+ fragment@1 {
+  target = <&dpi>;
+  __overlay__ {
+   status = "okay";
+
+   pinctrl-names = "default";
+   pinctrl-0 = <&dpi_18bit_gpio0>;
+
+   port {
+    dpi_out: endpoint@0 {
+     remote-endpoint = <&panel_in>;
+    };
+   };
+  };
+ };
+};

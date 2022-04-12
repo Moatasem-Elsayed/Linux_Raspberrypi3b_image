@@ -1,0 +1,46 @@
+# 1 "arch/arm/boot/dts/overlays/w1-gpio-pullup-overlay.dts"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "arch/arm/boot/dts/overlays/w1-gpio-pullup-overlay.dts"
+
+/dts-v1/;
+/plugin/;
+
+/ {
+ compatible = "brcm,bcm2835";
+
+ fragment@0 {
+  target-path = "/";
+  __overlay__ {
+
+   w1: onewire@0 {
+    compatible = "w1-gpio";
+    pinctrl-names = "default";
+    pinctrl-0 = <&w1_pins>;
+    gpios = <&gpio 4 0>, <&gpio 5 1>;
+    status = "okay";
+   };
+  };
+ };
+
+ fragment@1 {
+  target = <&gpio>;
+  __overlay__ {
+   w1_pins: w1_pins@0 {
+    brcm,pins = <4 5>;
+    brcm,function = <0 1>;
+    brcm,pull = <0 0>;
+   };
+  };
+ };
+
+ __overrides__ {
+  gpiopin = <&w1>,"gpios:4",
+    <&w1>,"reg:0",
+    <&w1_pins>,"brcm,pins:0",
+    <&w1_pins>,"reg:0";
+  extpullup = <&w1>,"gpios:16",
+    <&w1_pins>,"brcm,pins:4";
+  pullup;
+ };
+};

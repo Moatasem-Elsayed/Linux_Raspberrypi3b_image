@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/cma.dtbo: arch/arm/boot/dts/overlays/.cma.dtbo.dts.tmp

@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/i2s-gpio28-31.dtbo: arch/arm/boot/dts/overlays/.i2s-gpio28-31.dtbo.dts.tmp

@@ -1,0 +1,124 @@
+# 1 "arch/arm/boot/dts/overlays/ghost-amp-overlay.dts"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "arch/arm/boot/dts/overlays/ghost-amp-overlay.dts"
+
+/dts-v1/;
+/plugin/;
+
+# 1 "./scripts/dtc/include-prefixes/dt-bindings/gpio/gpio-fsm.h" 1
+# 6 "arch/arm/boot/dts/overlays/ghost-amp-overlay.dts" 2
+
+
+
+
+
+
+/ {
+ compatible = "brcm,bcm2835";
+
+ fragment@0 {
+  target = <&i2s>;
+  __overlay__ {
+   status = "okay";
+  };
+ };
+
+ fragment@1 {
+  target = <&i2c1>;
+  __overlay__ {
+   #address-cells = <1>;
+   #size-cells = <0>;
+   status = "okay";
+
+   pcm5122@4c {
+    #sound-dai-cells = <0>;
+    compatible = "ti,pcm5122";
+    reg = <0x4c>;
+    AVDD-supply = <&vdd_3v3_reg>;
+    DVDD-supply = <&vdd_3v3_reg>;
+    CPVDD-supply = <&vdd_3v3_reg>;
+    status = "okay";
+   };
+  };
+ };
+
+ fragment@2 {
+  target = <&sound>;
+  iqaudio_dac: __overlay__ {
+   compatible = "iqaudio,iqaudio-dac";
+   i2s-controller = <&i2s>;
+   mute-gpios = <&amp 0 0>;
+   iqaudio-dac,auto-mute-amp;
+   status = "okay";
+  };
+ };
+
+ fragment@3 {
+  target-path = "/";
+  __overlay__ {
+   amp: ghost-amp {
+    compatible = "rpi,gpio-fsm";
+
+    debug = <0>;
+    gpio-controller;
+    #gpio-cells = <2>;
+    num-soft-gpios = <1>;
+    gpio-line-names = "enable";
+    input-gpios = <&gpio 5 1>;
+    output-gpios = <&gpio 22 0>,
+            <&gpio 23 0>;
+    shutdown-timeout-ms = <1000>;
+
+    amp_off {
+     start_state;
+     shutdown_state;
+
+     set = <((((1)) << 16) | ((1) & 0xffff)) 0>,
+           <((((0)) << 16) | ((1) & 0xffff)) 0>;
+     amp_on_1 = <((((0)) << 16) | ((2) & 0xffff)) 1>;
+     fault = <((((0)) << 16) | ((0) & 0xffff)) 1>;
+    };
+
+    amp_on_1 {
+     set = <((((0)) << 16) | ((1) & 0xffff)) 1>;
+     amp_on = <3 1500>;
+     amp_off = <((((0)) << 16) | ((2) & 0xffff)) 0>;
+     fault = <((((0)) << 16) | ((0) & 0xffff)) 1>;
+    };
+
+    amp_on {
+     set = <((((1)) << 16) | ((1) & 0xffff)) 1>;
+     amp_off_wait = <((((0)) << 16) | ((2) & 0xffff)) 0>;
+     fault = <((((0)) << 16) | ((0) & 0xffff)) 1>;
+    };
+
+    amp_off_wait {
+     amp_off_1 = <3 (30*60*1000)>,
+          <4 0>;
+     amp_on = <((((0)) << 16) | ((2) & 0xffff)) 1>;
+     fault = <((((0)) << 16) | ((0) & 0xffff)) 1>;
+    };
+
+    amp_off_1 {
+     set = <((((1)) << 16) | ((1) & 0xffff)) 0>;
+     amp_on = <((((0)) << 16) | ((2) & 0xffff)) 1>;
+     amp_off = <3 100>;
+     fault = <((((0)) << 16) | ((0) & 0xffff)) 1>;
+    };
+
+
+
+    fault {
+     set = <((((1)) << 16) | ((1) & 0xffff)) 0>,
+           <((((0)) << 16) | ((1) & 0xffff)) 0>;
+     shutdown_state;
+    };
+   };
+  };
+ };
+
+ __overrides__ {
+  fsm_debug = <&amp>,"debug:0";
+ };
+};

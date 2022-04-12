@@ -1,0 +1,1 @@
+mbed-dac-overlay.o: arch/arm/boot/dts/overlays/mbed-dac-overlay.dts

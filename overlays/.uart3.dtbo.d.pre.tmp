@@ -1,0 +1,1 @@
+uart3-overlay.o: arch/arm/boot/dts/overlays/uart3-overlay.dts

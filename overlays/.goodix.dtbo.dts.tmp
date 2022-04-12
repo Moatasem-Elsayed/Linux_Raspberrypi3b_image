@@ -1,0 +1,50 @@
+# 1 "arch/arm/boot/dts/overlays/goodix-overlay.dts"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "arch/arm/boot/dts/overlays/goodix-overlay.dts"
+
+/dts-v1/;
+/plugin/;
+
+/ {
+ compatible = "brcm,bcm2835";
+
+ fragment@0 {
+  target = <&gpio>;
+  __overlay__ {
+   goodix_pins: goodix_pins {
+    brcm,pins = <4 17>;
+    brcm,function = <0 0>;
+    brcm,pull = <2 2>;
+   };
+  };
+ };
+
+ fragment@1 {
+  target = <&i2c1>;
+  __overlay__ {
+   #address-cells = <1>;
+   #size-cells = <0>;
+   status = "okay";
+
+   gt9271: gt9271@14 {
+    compatible = "goodix,gt9271";
+    reg = <0x14>;
+    pinctrl-names = "default";
+    pinctrl-0 = <&goodix_pins>;
+    interrupt-parent = <&gpio>;
+    interrupts = <4 2>;
+    irq-gpios = <&gpio 4 0>;
+    reset-gpios = <&gpio 17 1>;
+   };
+  };
+ };
+
+ __overrides__ {
+  interrupt = <&goodix_pins>,"brcm,pins:0",
+   <&gt9271>,"interrupts:0",
+   <&gt9271>,"irq-gpios:4";
+  reset = <&goodix_pins>,"brcm,pins:4",
+   <&gt9271>,"reset-gpios:4";
+ };
+};

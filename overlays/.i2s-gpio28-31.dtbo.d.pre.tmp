@@ -1,0 +1,2 @@
+i2s-gpio28-31-overlay.o: \
+ arch/arm/boot/dts/overlays/i2s-gpio28-31-overlay.dts

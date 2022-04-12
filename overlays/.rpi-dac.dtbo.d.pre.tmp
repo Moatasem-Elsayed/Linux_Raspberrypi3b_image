@@ -1,0 +1,1 @@
+rpi-dac-overlay.o: arch/arm/boot/dts/overlays/rpi-dac-overlay.dts

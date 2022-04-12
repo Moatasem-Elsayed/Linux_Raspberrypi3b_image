@@ -1,0 +1,2 @@
+allo-piano-dac-plus-pcm512x-audio-overlay.o: \
+ arch/arm/boot/dts/overlays/allo-piano-dac-plus-pcm512x-audio-overlay.dts

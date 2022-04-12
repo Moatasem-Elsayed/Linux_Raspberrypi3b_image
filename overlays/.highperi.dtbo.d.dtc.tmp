@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/highperi.dtbo: arch/arm/boot/dts/overlays/.highperi.dtbo.dts.tmp

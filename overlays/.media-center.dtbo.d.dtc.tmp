@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/media-center.dtbo: arch/arm/boot/dts/overlays/.media-center.dtbo.dts.tmp

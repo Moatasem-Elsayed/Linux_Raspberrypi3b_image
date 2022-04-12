@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/allo-katana-dac-audio.dtbo: arch/arm/boot/dts/overlays/.allo-katana-dac-audio.dtbo.dts.tmp

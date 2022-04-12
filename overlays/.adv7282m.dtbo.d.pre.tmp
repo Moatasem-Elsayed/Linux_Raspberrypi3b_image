@@ -1,0 +1,1 @@
+adv7282m-overlay.o: arch/arm/boot/dts/overlays/adv7282m-overlay.dts

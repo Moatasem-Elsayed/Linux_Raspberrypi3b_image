@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/spi-gpio35-39.dtbo: arch/arm/boot/dts/overlays/.spi-gpio35-39.dtbo.dts.tmp

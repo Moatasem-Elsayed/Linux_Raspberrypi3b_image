@@ -1,0 +1,183 @@
+# 1 "arch/arm/boot/dts/overlays/imx290-overlay.dts"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "arch/arm/boot/dts/overlays/imx290-overlay.dts"
+
+
+/dts-v1/;
+/plugin/;
+
+# 1 "./scripts/dtc/include-prefixes/dt-bindings/gpio/gpio.h" 1
+# 7 "arch/arm/boot/dts/overlays/imx290-overlay.dts" 2
+# 1 "arch/arm/boot/dts/overlays/imx290_327-overlay.dtsi" 1
+
+
+
+/dts-v1/;
+/plugin/;
+
+
+
+/{
+ compatible = "brcm,bcm2835";
+
+ fragment@0 {
+  target = <&i2c_csi_dsi>;
+  __overlay__ {
+   #address-cells = <1>;
+   #size-cells = <0>;
+   status = "okay";
+
+   imx290: imx290@1a {
+    reg = <0x1a>;
+    status = "okay";
+
+    clocks = <&imx290_clk>;
+    clock-names = "xclk";
+    clock-frequency = <37125000>;
+
+    vdda-supply = <&imx290_vdda>;
+    vdddo-supply = <&imx290_vdddo>;
+    vddd-supply = <&imx290_vddd>;
+
+    port {
+     imx290_0: endpoint {
+      remote-endpoint = <&csi1_ep>;
+      clock-lanes = <0>;
+     };
+    };
+   };
+  };
+ };
+
+ fragment@1 {
+  target = <&csi1>;
+  __overlay__ {
+   status = "okay";
+
+   port {
+    csi1_ep: endpoint {
+     remote-endpoint = <&imx290_0>;
+    };
+   };
+  };
+ };
+
+ fragment@2 {
+  target = <&i2c0if>;
+  __overlay__ {
+   status = "okay";
+  };
+ };
+
+ fragment@3 {
+  target-path="/";
+  __overlay__ {
+   imx290_vdda: fixedregulator@0 {
+    compatible = "regulator-fixed";
+    regulator-name = "imx290_vdda";
+    regulator-min-microvolt = <2800000>;
+    regulator-max-microvolt = <2800000>;
+    gpio = <&gpio 41 0>;
+    enable-active-high;
+   };
+   imx290_vdddo: fixedregulator@1 {
+    compatible = "regulator-fixed";
+    regulator-name = "imx290_vdddo";
+    regulator-min-microvolt = <1800000>;
+    regulator-max-microvolt = <1800000>;
+   };
+   imx290_vddd: fixedregulator@2 {
+    compatible = "regulator-fixed";
+    regulator-name = "imx290_vddd";
+    regulator-min-microvolt = <1500000>;
+    regulator-max-microvolt = <1500000>;
+   };
+
+   imx290_clk: camera-clk {
+    compatible = "fixed-clock";
+    #clock-cells = <0>;
+    clock-frequency = <37125000>;
+   };
+  };
+ };
+
+ fragment@4 {
+  target = <&i2c0mux>;
+  __overlay__ {
+   status = "okay";
+  };
+ };
+
+ fragment@5 {
+  target-path="/__overrides__";
+  __overlay__ {
+   cam0-pwdn-ctrl = <&imx290_vdda>,"gpio:0";
+   cam0-pwdn = <&imx290_vdda>,"gpio:4";
+  };
+ };
+
+ fragment@6 {
+  target = <&imx290_0>;
+  __overlay__ {
+   data-lanes = <1 2>;
+   link-frequencies =
+    /bits/ 64 <445500000 297000000>;
+  };
+ };
+
+ fragment@7 {
+  target = <&imx290_0>;
+  __dormant__ {
+   data-lanes = <1 2 3 4>;
+   link-frequencies =
+    /bits/ 64 <222750000 148500000>;
+  };
+ };
+
+ fragment@8 {
+  target = <&csi1_ep>;
+  __overlay__ {
+   data-lanes = <1 2>;
+  };
+ };
+
+ fragment@9 {
+  target = <&csi1_ep>;
+  __dormant__ {
+   data-lanes = <1 2 3 4>;
+  };
+ };
+
+ __overrides__ {
+  4lane = <0>, "-6+7-8+9";
+  clock-frequency = <&imx290_clk>,"clock-frequency:0",
+      <&imx290>,"clock-frequency:0";
+ };
+};
+# 8 "arch/arm/boot/dts/overlays/imx290-overlay.dts" 2
+
+/{
+ compatible = "brcm,bcm2835";
+
+
+
+
+ fragment@101 {
+  target = <&imx290>;
+  __overlay__ {
+   compatible = "sony,imx290";
+  };
+ };
+
+ fragment@102 {
+  target = <&imx290>;
+  __dormant__ {
+   compatible = "sony,imx290-mono";
+  };
+ };
+
+ __overrides__ {
+  mono = <0>, "-101+102";
+ };
+};

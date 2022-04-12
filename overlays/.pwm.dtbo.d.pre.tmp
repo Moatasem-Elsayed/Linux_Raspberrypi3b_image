@@ -1,0 +1,1 @@
+pwm-overlay.o: arch/arm/boot/dts/overlays/pwm-overlay.dts

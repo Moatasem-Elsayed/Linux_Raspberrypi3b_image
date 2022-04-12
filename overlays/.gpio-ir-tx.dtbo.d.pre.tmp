@@ -1,0 +1,1 @@
+gpio-ir-tx-overlay.o: arch/arm/boot/dts/overlays/gpio-ir-tx-overlay.dts

@@ -1,0 +1,2 @@
+pifacedigital-overlay.o: \
+ arch/arm/boot/dts/overlays/pifacedigital-overlay.dts

@@ -1,0 +1,2 @@
+spi-gpio40-45-overlay.o: \
+ arch/arm/boot/dts/overlays/spi-gpio40-45-overlay.dts

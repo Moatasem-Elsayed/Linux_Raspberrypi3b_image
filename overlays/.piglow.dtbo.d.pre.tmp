@@ -1,0 +1,1 @@
+piglow-overlay.o: arch/arm/boot/dts/overlays/piglow-overlay.dts

@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/sh1106-spi.dtbo: arch/arm/boot/dts/overlays/.sh1106-spi.dtbo.dts.tmp

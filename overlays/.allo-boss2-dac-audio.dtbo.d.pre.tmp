@@ -1,0 +1,2 @@
+allo-boss2-dac-audio-overlay.o: \
+ arch/arm/boot/dts/overlays/allo-boss2-dac-audio-overlay.dts

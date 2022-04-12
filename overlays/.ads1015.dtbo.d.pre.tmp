@@ -1,0 +1,1 @@
+ads1015-overlay.o: arch/arm/boot/dts/overlays/ads1015-overlay.dts

@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/dpi24.dtbo: arch/arm/boot/dts/overlays/.dpi24.dtbo.dts.tmp

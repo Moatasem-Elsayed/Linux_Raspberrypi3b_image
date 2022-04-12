@@ -1,0 +1,4 @@
+audiosense-pi-overlay.o: \
+ arch/arm/boot/dts/overlays/audiosense-pi-overlay.dts \
+ scripts/dtc/include-prefixes/dt-bindings/pinctrl/bcm2835.h \
+ scripts/dtc/include-prefixes/dt-bindings/gpio/gpio.h

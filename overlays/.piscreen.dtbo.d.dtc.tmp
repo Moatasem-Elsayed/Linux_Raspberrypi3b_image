@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/piscreen.dtbo: arch/arm/boot/dts/overlays/.piscreen.dtbo.dts.tmp

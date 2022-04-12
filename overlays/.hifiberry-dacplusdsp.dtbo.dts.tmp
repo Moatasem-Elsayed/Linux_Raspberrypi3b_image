@@ -1,0 +1,38 @@
+# 1 "arch/arm/boot/dts/overlays/hifiberry-dacplusdsp-overlay.dts"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "arch/arm/boot/dts/overlays/hifiberry-dacplusdsp-overlay.dts"
+
+/dts-v1/;
+/plugin/;
+
+/ {
+ compatible = "brcm,bcm2835";
+
+ fragment@0 {
+  target = <&i2s>;
+  __overlay__ {
+   status = "okay";
+  };
+ };
+
+ fragment@1 {
+  target-path = "/";
+  __overlay__ {
+   dacplusdsp-codec {
+    #sound-dai-cells = <0>;
+    compatible = "hifiberry,dacplusdsp";
+    status = "okay";
+   };
+  };
+ };
+
+ fragment@2 {
+  target = <&sound>;
+  __overlay__ {
+   compatible = "hifiberrydacplusdsp,hifiberrydacplusdsp-soundcard";
+   i2s-controller = <&i2s>;
+   status = "okay";
+  };
+ };
+};

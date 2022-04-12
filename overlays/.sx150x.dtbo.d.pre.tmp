@@ -1,0 +1,1 @@
+sx150x-overlay.o: arch/arm/boot/dts/overlays/sx150x-overlay.dts

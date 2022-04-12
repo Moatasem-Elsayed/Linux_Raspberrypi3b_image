@@ -1,0 +1,3 @@
+hifiberry-dacplushd-overlay.o: \
+ arch/arm/boot/dts/overlays/hifiberry-dacplushd-overlay.dts \
+ scripts/dtc/include-prefixes/dt-bindings/gpio/gpio.h

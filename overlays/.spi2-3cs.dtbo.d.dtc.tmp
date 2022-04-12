@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/spi2-3cs.dtbo: arch/arm/boot/dts/overlays/.spi2-3cs.dtbo.dts.tmp

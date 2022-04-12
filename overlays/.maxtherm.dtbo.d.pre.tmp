@@ -1,0 +1,1 @@
+maxtherm-overlay.o: arch/arm/boot/dts/overlays/maxtherm-overlay.dts

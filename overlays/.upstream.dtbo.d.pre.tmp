@@ -1,0 +1,2 @@
+upstream-overlay.o: arch/arm/boot/dts/overlays/upstream-overlay.dts \
+ scripts/dtc/include-prefixes/dt-bindings/clock/bcm2835.h

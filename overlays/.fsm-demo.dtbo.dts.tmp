@@ -1,0 +1,109 @@
+# 1 "arch/arm/boot/dts/overlays/fsm-demo-overlay.dts"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "arch/arm/boot/dts/overlays/fsm-demo-overlay.dts"
+
+/dts-v1/;
+/plugin/;
+
+# 1 "./scripts/dtc/include-prefixes/dt-bindings/gpio/gpio-fsm.h" 1
+# 6 "arch/arm/boot/dts/overlays/fsm-demo-overlay.dts" 2
+
+
+
+
+
+
+
+/{
+ compatible = "brcm,bcm2835";
+
+ fragment@0 {
+  target-path = "/";
+  __overlay__ {
+   fsm_demo: fsm-demo {
+    compatible = "rpi,gpio-fsm";
+
+    debug = <0>;
+    gpio-controller;
+    #gpio-cells = <2>;
+    num-soft-gpios = <1>;
+    gpio-line-names = "button2";
+    input-gpios = <&gpio 6 1>;
+    output-gpios = <&gpio 7 0>,
+            <&gpio 8 0>,
+            <&gpio 25 0>;
+    shutdown-timeout-ms = <2000>;
+
+    start {
+     start_state;
+     set = <((((0)) << 16) | ((1) & 0xffff)) 1>, <((((1)) << 16) | ((1) & 0xffff)) 0>, <((((2)) << 16) | ((1) & 0xffff)) 0>;
+     start2 = <3 250>;
+    };
+
+    start2 {
+     set = <((((0)) << 16) | ((1) & 0xffff)) 0>, <((((1)) << 16) | ((1) & 0xffff)) 1>;
+     go = <3 250>;
+    };
+
+    go {
+     set = <((((0)) << 16) | ((1) & 0xffff)) 0>, <((((1)) << 16) | ((1) & 0xffff)) 0>, <((((2)) << 16) | ((1) & 0xffff)) 1>;
+     ready_wait = <((((0)) << 16) | ((0) & 0xffff)) 0>;
+     shutdown1 = <4 0>;
+    };
+
+    ready_wait {
+
+     set = <((((0)) << 16) | ((2) & 0xffff)) 0>;
+     ready = <3 1000>;
+     shutdown1 = <4 0>;
+    };
+
+    ready {
+     stopping = <((((0)) << 16) | ((0) & 0xffff)) 1>, <((((0)) << 16) | ((2) & 0xffff)) 1>;
+     shutdown1 = <4 0>;
+    };
+
+    stopping {
+     set = <((((2)) << 16) | ((1) & 0xffff)) 0>, <((((1)) << 16) | ((1) & 0xffff)) 1>;
+     stopped = <3 1000>;
+    };
+
+    stopped {
+     set = <((((1)) << 16) | ((1) & 0xffff)) 0>, <((((0)) << 16) | ((1) & 0xffff)) 1>;
+     get_set = <3 3000>;
+     shutdown1 = <4 0>;
+    };
+
+    get_set {
+     set = <((((1)) << 16) | ((1) & 0xffff)) 1>;
+     go = <3 1000>;
+    };
+
+    shutdown1 {
+     set = <((((0)) << 16) | ((1) & 0xffff)) 0>, <((((1)) << 16) | ((1) & 0xffff)) 0>, <((((2)) << 16) | ((1) & 0xffff)) 1>;
+     shutdown2 = <4 250>;
+    };
+
+    shutdown2 {
+     set = <((((1)) << 16) | ((1) & 0xffff)) 1>, <((((2)) << 16) | ((1) & 0xffff)) 0>;
+     shutdown3 = <4 250>;
+    };
+
+    shutdown3 {
+     set = <((((0)) << 16) | ((1) & 0xffff)) 1>, <((((1)) << 16) | ((1) & 0xffff)) 0>;
+     shutdown4 = <4 250>;
+    };
+
+    shutdown4 {
+     shutdown_state;
+     set = <((((0)) << 16) | ((1) & 0xffff)) 0>;
+    };
+   };
+        };
+        };
+
+ __overrides__ {
+  fsm_debug = <&fsm_demo>,"debug:0";
+ };
+};

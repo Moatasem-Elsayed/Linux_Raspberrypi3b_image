@@ -1,0 +1,2 @@
+fsm-demo-overlay.o: arch/arm/boot/dts/overlays/fsm-demo-overlay.dts \
+ scripts/dtc/include-prefixes/dt-bindings/gpio/gpio-fsm.h

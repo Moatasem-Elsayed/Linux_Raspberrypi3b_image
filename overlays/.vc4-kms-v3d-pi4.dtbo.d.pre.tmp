@@ -1,0 +1,4 @@
+vc4-kms-v3d-pi4-overlay.o: \
+ arch/arm/boot/dts/overlays/vc4-kms-v3d-pi4-overlay.dts \
+ scripts/dtc/include-prefixes/dt-bindings/clock/bcm2835.h \
+ arch/arm/boot/dts/overlays/cma-overlay.dts

@@ -1,0 +1,2 @@
+audioinjector-isolated-soundcard-overlay.o: \
+ arch/arm/boot/dts/overlays/audioinjector-isolated-soundcard-overlay.dts

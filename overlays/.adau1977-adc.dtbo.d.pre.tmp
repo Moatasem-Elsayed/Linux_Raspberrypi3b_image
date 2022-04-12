@@ -1,0 +1,2 @@
+adau1977-adc-overlay.o: \
+ arch/arm/boot/dts/overlays/adau1977-adc-overlay.dts

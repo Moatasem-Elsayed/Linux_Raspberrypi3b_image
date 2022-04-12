@@ -1,0 +1,1 @@
+mcp3202-overlay.o: arch/arm/boot/dts/overlays/mcp3202-overlay.dts

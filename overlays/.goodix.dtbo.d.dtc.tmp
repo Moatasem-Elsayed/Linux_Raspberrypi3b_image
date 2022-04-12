@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/goodix.dtbo: arch/arm/boot/dts/overlays/.goodix.dtbo.dts.tmp

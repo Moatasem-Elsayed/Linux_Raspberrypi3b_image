@@ -1,0 +1,1 @@
+i2c0-overlay.o: arch/arm/boot/dts/overlays/i2c0-overlay.dts

@@ -1,0 +1,1 @@
+dpi18-overlay.o: arch/arm/boot/dts/overlays/dpi18-overlay.dts

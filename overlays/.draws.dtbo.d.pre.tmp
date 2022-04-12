@@ -1,0 +1,2 @@
+draws-overlay.o: arch/arm/boot/dts/overlays/draws-overlay.dts \
+ scripts/dtc/include-prefixes/dt-bindings/clock/bcm2835.h

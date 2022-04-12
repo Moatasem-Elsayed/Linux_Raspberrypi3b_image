@@ -1,0 +1,2 @@
+sc16is752-spi1-overlay.o: \
+ arch/arm/boot/dts/overlays/sc16is752-spi1-overlay.dts

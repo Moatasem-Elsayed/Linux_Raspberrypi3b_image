@@ -1,0 +1,2 @@
+ov7251-overlay.o: arch/arm/boot/dts/overlays/ov7251-overlay.dts \
+ scripts/dtc/include-prefixes/dt-bindings/gpio/gpio.h

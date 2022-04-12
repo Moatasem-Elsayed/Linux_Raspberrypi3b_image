@@ -1,0 +1,2 @@
+adv728x-m-overlay.o: arch/arm/boot/dts/overlays/adv728x-m-overlay.dts \
+ arch/arm/boot/dts/overlays/adv7282m-overlay.dts

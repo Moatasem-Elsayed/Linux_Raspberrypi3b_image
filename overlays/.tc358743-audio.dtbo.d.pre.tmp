@@ -1,0 +1,2 @@
+tc358743-audio-overlay.o: \
+ arch/arm/boot/dts/overlays/tc358743-audio-overlay.dts

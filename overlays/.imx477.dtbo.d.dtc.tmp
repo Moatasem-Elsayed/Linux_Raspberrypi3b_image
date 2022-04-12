@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/imx477.dtbo: arch/arm/boot/dts/overlays/.imx477.dtbo.dts.tmp

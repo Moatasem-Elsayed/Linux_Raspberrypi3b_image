@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/pitft22.dtbo: arch/arm/boot/dts/overlays/.pitft22.dtbo.dts.tmp

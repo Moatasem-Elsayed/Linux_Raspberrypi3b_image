@@ -1,0 +1,48 @@
+# 1 "arch/arm/boot/dts/overlays/tpm-slb9670-overlay.dts"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "arch/arm/boot/dts/overlays/tpm-slb9670-overlay.dts"
+
+
+
+
+
+
+/dts-v1/;
+/plugin/;
+
+/ {
+ compatible = "brcm,bcm2835";
+
+ fragment@0 {
+  target = <&spi0>;
+  __overlay__ {
+   status = "okay";
+  };
+ };
+
+ fragment@1 {
+  target = <&spidev1>;
+  __overlay__ {
+   status = "disabled";
+  };
+ };
+
+ fragment@2 {
+  target = <&spi0>;
+  __overlay__ {
+
+   #address-cells = <1>;
+   #size-cells = <0>;
+   slb9670: slb9670@1 {
+    compatible = "infineon,slb9670";
+    reg = <1>;
+    #address-cells = <1>;
+    #size-cells = <0>;
+    spi-max-frequency = <32000000>;
+    status = "okay";
+   };
+
+  };
+ };
+};

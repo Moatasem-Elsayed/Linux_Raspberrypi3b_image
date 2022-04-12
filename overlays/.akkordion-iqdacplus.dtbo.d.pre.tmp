@@ -1,0 +1,2 @@
+akkordion-iqdacplus-overlay.o: \
+ arch/arm/boot/dts/overlays/akkordion-iqdacplus-overlay.dts

@@ -1,0 +1,42 @@
+# 1 "arch/arm/boot/dts/overlays/hdmi-backlight-hwhack-gpio-overlay.dts"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "arch/arm/boot/dts/overlays/hdmi-backlight-hwhack-gpio-overlay.dts"
+# 11 "arch/arm/boot/dts/overlays/hdmi-backlight-hwhack-gpio-overlay.dts"
+/dts-v1/;
+/plugin/;
+
+/ {
+ compatible = "brcm,bcm2835";
+
+ fragment@1 {
+  target = <&gpio>;
+  __overlay__ {
+   hdmi_backlight_hwhack_gpio_pins: hdmi_backlight_hwhack_gpio_pins {
+    brcm,pins = <17>;
+    brcm,function = <1>;
+   };
+  };
+ };
+
+ fragment@2 {
+  target-path = "/";
+  __overlay__ {
+   hdmi_backlight_hwhack_gpio: hdmi_backlight_hwhack_gpio {
+    compatible = "gpio-backlight";
+
+    pinctrl-names = "default";
+    pinctrl-0 = <&hdmi_backlight_hwhack_gpio_pins>;
+
+    gpios = <&gpio 17 0>;
+    default-on;
+   };
+  };
+ };
+
+ __overrides__ {
+  gpio_pin = <&hdmi_backlight_hwhack_gpio>,"gpios:4",
+               <&hdmi_backlight_hwhack_gpio_pins>,"brcm,pins:0";
+  active_low = <&hdmi_backlight_hwhack_gpio>,"gpios:8";
+ };
+};

@@ -1,0 +1,1 @@
+i2c6-overlay.o: arch/arm/boot/dts/overlays/i2c6-overlay.dts

@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/i2c5.dtbo: arch/arm/boot/dts/overlays/.i2c5.dtbo.dts.tmp

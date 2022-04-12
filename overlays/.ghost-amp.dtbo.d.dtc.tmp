@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/ghost-amp.dtbo: arch/arm/boot/dts/overlays/.ghost-amp.dtbo.dts.tmp

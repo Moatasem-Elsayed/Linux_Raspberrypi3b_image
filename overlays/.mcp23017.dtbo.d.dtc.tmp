@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/mcp23017.dtbo: arch/arm/boot/dts/overlays/.mcp23017.dtbo.dts.tmp

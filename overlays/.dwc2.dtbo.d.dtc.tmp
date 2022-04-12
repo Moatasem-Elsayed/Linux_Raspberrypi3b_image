@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/dwc2.dtbo: arch/arm/boot/dts/overlays/.dwc2.dtbo.dts.tmp

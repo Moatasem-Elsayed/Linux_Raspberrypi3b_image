@@ -1,0 +1,2 @@
+balena-fin-overlay.o: arch/arm/boot/dts/overlays/balena-fin-overlay.dts \
+ scripts/dtc/include-prefixes/dt-bindings/gpio/gpio.h

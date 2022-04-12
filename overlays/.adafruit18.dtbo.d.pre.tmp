@@ -1,0 +1,1 @@
+adafruit18-overlay.o: arch/arm/boot/dts/overlays/adafruit18-overlay.dts

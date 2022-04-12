@@ -1,0 +1,1 @@
+at86rf233-overlay.o: arch/arm/boot/dts/overlays/at86rf233-overlay.dts

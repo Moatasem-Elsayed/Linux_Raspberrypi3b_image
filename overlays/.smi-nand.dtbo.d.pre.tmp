@@ -1,0 +1,1 @@
+smi-nand-overlay.o: arch/arm/boot/dts/overlays/smi-nand-overlay.dts

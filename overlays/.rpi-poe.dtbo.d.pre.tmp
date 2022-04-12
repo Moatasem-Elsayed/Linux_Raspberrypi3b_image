@@ -1,0 +1,1 @@
+rpi-poe-overlay.o: arch/arm/boot/dts/overlays/rpi-poe-overlay.dts

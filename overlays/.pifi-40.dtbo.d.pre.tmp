@@ -1,0 +1,2 @@
+pifi-40-overlay.o: arch/arm/boot/dts/overlays/pifi-40-overlay.dts \
+ scripts/dtc/include-prefixes/dt-bindings/gpio/gpio.h

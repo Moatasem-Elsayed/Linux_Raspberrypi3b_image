@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/sx150x.dtbo: arch/arm/boot/dts/overlays/.sx150x.dtbo.dts.tmp

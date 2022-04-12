@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/tc358743-audio.dtbo: arch/arm/boot/dts/overlays/.tc358743-audio.dtbo.dts.tmp

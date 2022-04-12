@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/merus-amp.dtbo: arch/arm/boot/dts/overlays/.merus-amp.dtbo.dts.tmp

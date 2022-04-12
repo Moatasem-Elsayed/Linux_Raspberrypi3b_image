@@ -1,0 +1,2 @@
+allo-boss-dac-pcm512x-audio-overlay.o: \
+ arch/arm/boot/dts/overlays/allo-boss-dac-pcm512x-audio-overlay.dts

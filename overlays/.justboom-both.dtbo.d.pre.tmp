@@ -1,0 +1,2 @@
+justboom-both-overlay.o: \
+ arch/arm/boot/dts/overlays/justboom-both-overlay.dts

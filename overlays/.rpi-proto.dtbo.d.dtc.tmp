@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/rpi-proto.dtbo: arch/arm/boot/dts/overlays/.rpi-proto.dtbo.dts.tmp

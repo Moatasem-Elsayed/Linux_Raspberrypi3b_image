@@ -1,0 +1,3 @@
+merus-amp-overlay.o: arch/arm/boot/dts/overlays/merus-amp-overlay.dts \
+ scripts/dtc/include-prefixes/dt-bindings/pinctrl/bcm2835.h \
+ scripts/dtc/include-prefixes/dt-bindings/gpio/gpio.h

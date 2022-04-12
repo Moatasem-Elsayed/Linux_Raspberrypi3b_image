@@ -1,0 +1,1 @@
+ov5647-overlay.o: arch/arm/boot/dts/overlays/ov5647-overlay.dts

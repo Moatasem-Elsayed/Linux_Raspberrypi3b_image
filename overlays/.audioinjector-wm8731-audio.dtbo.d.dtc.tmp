@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/audioinjector-wm8731-audio.dtbo: arch/arm/boot/dts/overlays/.audioinjector-wm8731-audio.dtbo.dts.tmp

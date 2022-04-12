@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/audioinjector-isolated-soundcard.dtbo: arch/arm/boot/dts/overlays/.audioinjector-isolated-soundcard.dtbo.dts.tmp

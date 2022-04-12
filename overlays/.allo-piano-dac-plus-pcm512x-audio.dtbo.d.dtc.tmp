@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/allo-piano-dac-plus-pcm512x-audio.dtbo: arch/arm/boot/dts/overlays/.allo-piano-dac-plus-pcm512x-audio.dtbo.dts.tmp

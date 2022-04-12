@@ -1,0 +1,2 @@
+iqaudio-codec-overlay.o: \
+ arch/arm/boot/dts/overlays/iqaudio-codec-overlay.dts

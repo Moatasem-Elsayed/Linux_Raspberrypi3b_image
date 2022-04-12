@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/miniuart-bt.dtbo: arch/arm/boot/dts/overlays/.miniuart-bt.dtbo.dts.tmp

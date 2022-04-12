@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/sc16is752-i2c.dtbo: arch/arm/boot/dts/overlays/.sc16is752-i2c.dtbo.dts.tmp

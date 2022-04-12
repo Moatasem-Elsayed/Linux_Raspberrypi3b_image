@@ -1,0 +1,22 @@
+# 1 "arch/arm/boot/dts/overlays/i2s-gpio28-31-overlay.dts"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "arch/arm/boot/dts/overlays/i2s-gpio28-31-overlay.dts"
+
+
+
+
+/dts-v1/;
+/plugin/;
+
+/ {
+ compatible = "brcm,bcm2835";
+
+ fragment@0 {
+  target = <&i2s_pins>;
+  __overlay__ {
+   brcm,pins = <28 29 30 31>;
+   brcm,function = <6>;
+  };
+ };
+};

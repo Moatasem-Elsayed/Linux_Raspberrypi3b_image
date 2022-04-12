@@ -1,0 +1,1 @@
+mcp3008-overlay.o: arch/arm/boot/dts/overlays/mcp3008-overlay.dts

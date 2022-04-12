@@ -1,0 +1,1 @@
+arch/arm/boot/dts/overlays/mpu6050.dtbo: arch/arm/boot/dts/overlays/.mpu6050.dtbo.dts.tmp
