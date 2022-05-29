@@ -48,5 +48,43 @@ make -j 6 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-
 
 ```
 
+---
+---
+> ## Kernel stage 
+```
+git clone --depth=1 https://github.com/raspberrypi/linux
+cd linux
+
+```
+
+Apply default config for RPi3
+```
+  make bcm2709_defconfig
+  or
+  make bcm2835_defconfig
+  
+```
+Compile actual kernel, modules, DTBs
+Takes ~20 minutes on modern i7 with SSD
+```
+
+make -j12 zImage modules dtbs
+
+```
 
 
+May require `sudo`:
+```
+export INSTALL_MOD_PATH=/home/moatasem/linux/
+make modules_install
+```
+
+copy to sdacard
+
+```
+
+cp arch/arm/boot/zImage /media/moatasem/rpi_boot
+cp arch/arm/boot/dts/bcm2710-rpi-3-b.dtb /media/moatasem/rpi_boot
+cp arch/arm/boot/dts/overlays/disable-bt.dtbo /media/moatasem/rpi_boot/overlays
+
+```
