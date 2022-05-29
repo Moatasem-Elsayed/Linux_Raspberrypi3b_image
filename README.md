@@ -59,16 +59,17 @@ cd linux
 
 Apply default config for RPi3
 ```
-  make bcm2709_defconfig
+  make bcm2709_defconfig ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-
   or
-  make bcm2835_defconfig
+  make bcm2835_defconfig ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-
+
   
 ```
 Compile actual kernel, modules, DTBs
 Takes ~20 minutes on modern i7 with SSD
 ```
 
-make -j12 zImage modules dtbs
+make -j12 zImage modules dtbs ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-
 
 ```
 
@@ -76,7 +77,7 @@ make -j12 zImage modules dtbs
 May require `sudo`:
 ```
 export INSTALL_MOD_PATH=/home/moatasem/linux/
-make modules_install
+make modules_install ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-
 ```
 
 copy to sdacard
