@@ -65,6 +65,13 @@ Apply default config for RPi3
 
   
 ```
+change in configuration
+```
+
+make menuconfig ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-
+
+```
+
 Compile actual kernel, modules, DTBs
 Takes ~20 minutes on modern i7 with SSD
 ```
@@ -87,5 +94,6 @@ copy to sdacard
 cp arch/arm/boot/zImage /media/moatasem/rpi_boot
 cp arch/arm/boot/dts/bcm2710-rpi-3-b.dtb /media/moatasem/rpi_boot
 cp arch/arm/boot/dts/overlays/disable-bt.dtbo /media/moatasem/rpi_boot/overlays
+cp libs -r  /media/moatasem/rpi_rootfs
 
 ```
