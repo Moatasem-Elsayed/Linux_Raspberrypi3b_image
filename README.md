@@ -102,14 +102,24 @@ cp libs -R  /media/moatasem/rpi_rootfs
 ---
 > ## Busy Box 
 ------------------------------------------------------------------
-			Download repo
+
+Download repo
+			
 ------------------------------------------------------------------
+
+```
+
 git clone git://busybox.net/busybox.git --branch=1_33_0 --depth=1
 cd BusyBox
 
+````
 ------------------------------------------------------------------
-			Build
+Build
+			
 ------------------------------------------------------------------
+
+```
+
 make menuconfig
 
 
@@ -120,14 +130,23 @@ Settings -> Destination path for ‘make install’ 	Same as INSTALL_MOD_PATH fr
 make -j12
 make install
 
+```
+
 ------------------------------------------------------------------
-			output
+
+output
+			
 ------------------------------------------------------------------
+
  usr bin sbin 
 
 ------------------------------------------------------------------
-			Adjust Rootfile system
+Adjust Rootfile system
+			
 ------------------------------------------------------------------
+
+```
+
 # Create directories to mount stuff:
 mkdir proc
 mkdir sys
@@ -139,9 +158,15 @@ mkdir etc/init.d
 touch etc/init.d/rcS
 chmod +x etc/init.d/rcS
 
+```
+
 ------------------------------------------------------------------
-			rcS
+rcS
+			
 ------------------------------------------------------------------
+
+```
+
 Add the following entries to etc/init.d/rcS:
 
 #!/bin/sh
@@ -150,8 +175,13 @@ mount -t sysfs none /sys
 
 echo /sbin/mdev > /proc/sys/kernel/hotplug
 mdev -s  # -s	Scan /sys and populate /dev\n"
+
+```
+
 ------------------------------------------------------------------
-			copy lib 
+
+copy lib 
+			
 ------------------------------------------------------------------
 
 
