@@ -97,3 +97,61 @@ cp arch/arm/boot/dts/overlays/disable-bt.dtbo /media/moatasem/rpi_boot/overlays
 cp libs -R  /media/moatasem/rpi_rootfs
 
 ```
+
+---
+---
+> ## Busy Box 
+------------------------------------------------------------------
+			Download repo
+------------------------------------------------------------------
+git clone git://busybox.net/busybox.git --branch=1_33_0 --depth=1
+cd BusyBox
+
+------------------------------------------------------------------
+			Build
+------------------------------------------------------------------
+make menuconfig
+
+
+Settings -> Build static binary 	(no shared libraries) 	Enable
+Settings -> Cross compiler prefix 	arm-Linux-gnueabihf-
+Settings -> Destination path for ‘make install’ 	Same as INSTALL_MOD_PATH from kernel modules ste
+
+make -j12
+make install
+
+------------------------------------------------------------------
+			output
+------------------------------------------------------------------
+ usr bin sbin 
+
+------------------------------------------------------------------
+			Adjust Rootfile system
+------------------------------------------------------------------
+# Create directories to mount stuff:
+mkdir proc
+mkdir sys
+mkdir dev
+mkdir etc
+
+# Create config directory:
+mkdir etc/init.d
+touch etc/init.d/rcS
+chmod +x etc/init.d/rcS
+
+------------------------------------------------------------------
+			rcS
+------------------------------------------------------------------
+Add the following entries to etc/init.d/rcS:
+
+#!/bin/sh
+mount -t proc none /proc
+mount -t sysfs none /sys
+
+echo /sbin/mdev > /proc/sys/kernel/hotplug
+mdev -s  # -s	Scan /sys and populate /dev\n"
+------------------------------------------------------------------
+			copy lib 
+------------------------------------------------------------------
+
+
